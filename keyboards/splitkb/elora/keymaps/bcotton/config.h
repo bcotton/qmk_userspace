@@ -21,3 +21,10 @@
 
 // Debounce reduces chatter (unintended double-presses) - set 0 if debouncing is not needed
 #define DEBOUNCE 5
+
+
+// in config.h:
+#define POINTING_DEVICE_AUTO_MOUSE_ENABLE
+// only required if not setting mouse layer elsewhere
+#define AUTO_MOUSE_DEFAULT_LAYER 5
+

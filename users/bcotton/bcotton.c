@@ -30,7 +30,7 @@ enum {
     DOUBLE_TAP,
     DOUBLE_HOLD,
     DOUBLE_SINGLE_TAP,
-    MORE_TAPS
+    MORE_TAPS,
 };
 
 static tap dance_state[13];

@@ -22,6 +22,7 @@
 #define CTL_MINS MT(MOD_RCTL, KC_MINUS)
 #define ALT_ENT  MT(MOD_LALT, KC_ENT)
 
+
 // Note: LAlt/Enter (ALT_ENT) is not the same thing as the keyboard shortcut Alt+Enter.
 // The notation `mod/tap` denotes a key that activates the modifier `mod` when held down, and
 // produces the key `tap` when tapped (i.e. pressed and released).
@@ -112,7 +113,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       KC_F12, KC_F1, KC_F2, KC_F3, KC_F4, KC_F5,          _______, _______,          KC_F6, KC_F7, KC_F8, KC_F9, KC_F10, KC_F11,
       _______ ,   KC_GRV, KC_LT , KC_GT , KC_DQT , KC_DOT ,          _______, _______,     KC_AMPR , DOUBLE_COLON , KC_LBRC , KC_RBRC , KC_PERC , _______ ,
      _______ , KC_EXLM, KC_MINUS , KC_PLUS,  KC_EQUAL, KC_HASH,          _______, _______,          KC_PIPE, KC_COLN, KC_LPRN, KC_RPRN, KC_QUES, _______,
-     _______ , KC_CIRC, KC_SLASH, KC_ASTR, KC_BSLS, UPDIR, KC_LPRN, _______, _______, KC_TILD, KC_DLR, KC_LCBR, KC_RCBR,  KC_AT, _______, _______,
+     _______ , KC_CIRC, KC_SLASH, KC_ASTR, KC_BSLS, UPDIR, KC_LPRN, _______, _______,  _______, KC_TILD, KC_DLR, KC_LCBR, KC_RCBR,  KC_AT, _______,
                                  _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
 
       _______, _______, _______, _______,          _______,                   _______, _______, _______, _______,          _______
@@ -182,6 +183,33 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     ),
 
+/*
+ * Layer template - LAYOUT
+ *
+ * ,-------------------------------------------.      ,------.  ,------.      ,-------------------------------------------.
+ * |        |      |      |      |      |      |      |      |  |      |      |      |      |      |      |      |        |
+ * |--------+------+------+------+------+------|      |------|  |------|      |------+------+------+------+------+--------|
+ * |        |      |      |      |      |      |      |      |  |      |      |      |      |      |      |      |        |
+ * |--------+------+------+------+------+------|      |------|  |------|      |------+------+------+------+------+--------|
+ * |        |      |      |      |      |      |      |      |  |      |      |      |      |      |      |      |        |
+ * |--------+------+------+------+------+------+------+------|  |------|------+------+------+------+------+------+--------|
+ * |        |      |      |      |      |      |      |      |  |      |      |      |      |      |      |      |        |
+ * `----------------------+------+------+------+------+------|  |------+------+------+------+------+----------------------'
+ *                        |      |      |      |      |      |  |      |      |      |      |      |
+ *                        |      |      |      |      |      |  |      |      |      |      |      |
+ *                        `----------------------------------'  `----------------------------------'
+ */
+    [_MOUSE] = LAYOUT_myr(
+      _______, _______, _______, _______, _______, _______,          _______, _______,          _______, _______, _______, _______, _______, _______,
+      _______, _______, _______, _______, _______, _______,          _______, _______,          _______, _______, _______, _______, _______, _______,
+      _______, _______, _______, _______, KC_BTN1, _______,          _______, _______,          _______, _______, _______, _______, _______, _______,
+      _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
+                                 _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
+               _______, _______, _______, _______,          _______,                   _______, _______, _______, _______,          _______
+
+    ),
+
+
 // /*
 //  * Layer template - LAYOUT
 //  *
@@ -238,7 +266,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 };
 
 
-#define SPLIT_WATCHDOG_TIMEOUT 3000
+// in keymap.c:
+void pointing_device_init_user(void) {
+    set_auto_mouse_enable(true);         // always required before the auto mouse feature will work
+}
+
+
+
 
 /* The default OLED and rotary encoder code can be found at the bottom of qmk_firmware/keyboards/splitkb/elora/rev1/rev1.c
  * These default settings can be overriden by your own settings in your keymap.c

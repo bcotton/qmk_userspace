@@ -9,6 +9,7 @@ enum layers {
     _NAV,
     _NUM,
     _ADJUST,
+    _MOUSE,
 };
 
 // Tap Dance declarations
@@ -32,6 +33,7 @@ enum custom_keycodes {
 #define NAV      MO(_NAV)
 #define NUM      MO(_NUM)
 #define ADJUST   MO(_ADJUST)
+#define MOUSE    OSL(_MOUSE)
 
 #define B_BACK    LGUI(KC_LEFT)
 #define B_FORWARD RGUI(KC_RIGHT)

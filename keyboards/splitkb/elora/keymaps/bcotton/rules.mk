@@ -38,3 +38,4 @@ NKRO_ENABLE = yes          # Enable N-Key Rollover
 
 CONSOLE_ENABLE = yes	   # Console for debug
 TAP_DANCE_ENABLE = yes
+POINTING_DEVICE_ENABLE = yes
