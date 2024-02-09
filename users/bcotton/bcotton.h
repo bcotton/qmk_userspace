@@ -1,3 +1,6 @@
+#include "process_tap_dance.h"
+
+
 #define CTL_ESC  MT(MOD_LCTL, KC_ESC)
 #define HYPER OSM(MOD_LSFT | MOD_LALT | MOD_LGUI | MOD_LCTL )
 enum layers {
