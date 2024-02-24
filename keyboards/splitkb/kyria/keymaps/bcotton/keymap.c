@@ -41,7 +41,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
     [_QWERTY] = LAYOUT_split_3x6_5(
      KC_TAB,      KC_Q ,       KC_W,        KC_E,        KC_R,        KC_T , KC_Y,   KC_U , KC_I ,       KC_O ,       KC_P ,            KC_BSPC,
-     CTL_ESC,     LCTL_T(KC_A),LALT_T(KC_S),LGUI_T(KC_D),KC_F,        LSFT_T(KC_G), RSFT_T(KC_H),  KC_J,        RGUI_T(KC_K),RALT_T(KC_L),RCTL_T(KC_SCLN),KC_QUOT,
+     CTL_ESC,     LCTL_T(KC_A),LALT_T(KC_S),LGUI_T(KC_D),LSFT_T(KC_F),        LSFT_T(KC_G), RSFT_T(KC_H),  RSFT_T(KC_J),        RGUI_T(KC_K),RALT_T(KC_L),RCTL_T(KC_SCLN),KC_QUOT,
      KC_LSFT,     KC_Z,        KC_X,        KC_C,        KC_V ,       KC_B , ADJUST,_______,  _______ , _______,          KC_N,   KC_M,  KC_COMMA,    KC_DOT,      TD(DANCE_3),      KC_RSFT,
                                S_GUI_A,  NUM, NAV, LSFT_T(KC_SPC) , _______   ,KC_HYPR , RSFT_T(KC_BSPC) , SYM, OSM(MOD_HYPR), _______
     ),
